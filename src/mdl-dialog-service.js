@@ -1,5 +1,5 @@
 import dialogPolyfill from 'dialog-polyfill';
-import {Container, ViewSlot, CompositionEngine, Origin} from 'aurelia-framework';
+import {Container, ViewSlot, CompositionEngine, Origin, InlineViewStrategy} from 'aurelia-framework';
 
 export default class MdlDialogService {
 
