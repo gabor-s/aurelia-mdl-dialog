@@ -1,2 +1,4 @@
 .editorconfig
 .babelrc
+.eslintrc.json
+.travis.yml
