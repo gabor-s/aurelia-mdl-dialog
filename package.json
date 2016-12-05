@@ -1,6 +1,6 @@
 {
   "name": "aurelia-mdl-dialog",
-  "version": "2.0.0-beta.0",
+  "version": "1.0.0-beta.0",
   "description": "Aurelia wrapper for Material Design Lite's Dialog component",
   "main": "src/mdl-dialog-service.js",
   "keywords": [
@@ -28,7 +28,6 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-register": "^6.18.0",
     "eslint": "^3.11.1",
-    "release-it": "^2.5.1",
     "tape": "^4.6.3"
   },
   "scripts": {
