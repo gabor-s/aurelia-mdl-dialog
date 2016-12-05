@@ -1,0 +1,23 @@
+{
+    "name": "aurelia-mdl-dialog-demo",
+    "version": "0.1.0",
+    "description": "Demo for aurelia-mdl-dialog",
+    "scripts": {
+        "start": "ws -p 8080 -s index.html"
+    },
+    "jspm": {
+        "dependencies": {
+            "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
+            "aurelia-mdl-dialog": "npm:aurelia-mdl-dialog@^1.0.0-beta.0"
+        },
+        "devDependencies": {
+            "babel": "npm:babel-core@^5.8.24",
+            "babel-runtime": "npm:babel-runtime@^5.8.24",
+            "core-js": "npm:core-js@^1.1.4"
+        }
+    },
+    "devDependencies": {
+        "jspm": "^0.16.45",
+        "local-web-server": "^1.2.6"
+    }
+}
