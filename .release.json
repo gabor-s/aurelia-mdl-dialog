@@ -1,0 +1,4 @@
+{
+    "prereleaseId": "beta",
+    "buildCommand": "npm run build"
+}
