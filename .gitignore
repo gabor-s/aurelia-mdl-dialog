@@ -1,3 +1,4 @@
 .idea
 aurelia-mdl-dialog.iml
 node_modules
+demo/jspm_packages

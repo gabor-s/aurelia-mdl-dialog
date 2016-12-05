@@ -2,3 +2,8 @@
 .babelrc
 .eslintrc.json
 .travis.yml
+.release.json
+demo
+.idea
+test
+.npmignore
