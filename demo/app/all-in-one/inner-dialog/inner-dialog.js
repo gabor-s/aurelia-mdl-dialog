@@ -1,6 +1,6 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
 
-export class InnerDialogCustomElement {
+export class InnerDialog {
 
     static inject() {
         return [MdlDialogService];

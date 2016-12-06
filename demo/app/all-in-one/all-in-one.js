@@ -7,7 +7,7 @@ export class AllInOneCustomElement {
         return [MdlDialogService];
     }
 
-    constructor(mdlDialogService, controllerPromise) {
+    constructor(mdlDialogService) {
         this._mdlDialogService = mdlDialogService;
         // this._controllerPromise = controllerPromise;
         this.dialogTitle = "";
@@ -18,7 +18,6 @@ export class AllInOneCustomElement {
     }
 
     openDialog() {
-        debugger;
         this._mdlDialogService.open({viewModel: Dialog, model: {title: this.dialogTitle}})
             .then(dialogResult => {
                 // TODO:

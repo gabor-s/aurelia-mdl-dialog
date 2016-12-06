@@ -88,7 +88,7 @@ class MdlDialogViewModel {
     getViewStrategy() {
         return new InlineViewStrategy(`
             <template>
-                <require from="jspm_packages/github/GoogleChrome/dialog-polyfill@0.4.4/dialog-polyfill.css"></require>
+                <require from="jspm_packages/npm/dialog-polyfill@0.4.5/dialog-polyfill.css"></require>
             
                 <dialog mdl="dialog" ref="dialog" class.one-time="configuration.cssClass">
                     <compose view-model.bind="configuration.viewModel" model.bind="configuration.model" containerless></compose>

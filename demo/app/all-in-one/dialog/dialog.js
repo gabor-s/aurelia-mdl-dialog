@@ -1,7 +1,7 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
 import {InnerDialog} from 'app/all-in-one/inner-dialog/inner-dialog';
 
-export class DialogCustomElement {
+export class Dialog {
 
     static inject() {
         return [MdlDialogService, Promise];
