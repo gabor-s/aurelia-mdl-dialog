@@ -1,5 +1,5 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
-import {InnerDialog} from 'app/all-in-one/inner-dialog/inner-dialog';
+import {InnerDialog} from 'app/inner-dialog/inner-dialog';
 
 export class Dialog {
 

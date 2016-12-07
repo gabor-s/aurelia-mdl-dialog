@@ -9,7 +9,8 @@
         "dependencies": {
             "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
             "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.1",
-            "aurelia-mdl": "github:genadis/aurelia-mdl@^0.3.0"
+            "aurelia-mdl": "github:genadis/aurelia-mdl@^0.3.0",
+            "font-awesome": "npm:font-awesome@^4.7.0"
         },
         "devDependencies": {
             "babel": "npm:babel-core@^5.8.24",

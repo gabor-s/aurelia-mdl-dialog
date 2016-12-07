@@ -1,79 +1,138 @@
 <template>
     <require from="jspm_packages/github/genadis/encapsulated-mdl@2.2.0/material.amber-pink.min.css"></require>
-    <require from="app/all-in-one/all-in-one"></require>
+    <require from="jspm_packages/npm/font-awesome@4.7.0/css/font-awesome.min.css"></require>
 
-    <all-in-one></all-in-one>
-    <!--div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout__title">Material Design Lite dialog component with Aurelia</span>
+                <span class="mdl-layout__title">Live demo for aurelia-mdl-dialog</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="https://github.com/suhaig/aurelia-mdl-dialog">
+                        <i class="fa fa-github"></i> GitHub
+                    </a>
+                </nav>
             </div>
         </header>
         <main class="mdl-layout__content">
-            <div mdl="grid">
-                <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Simple, non-modal dialog</h2>
+            <div mdl="grid" class="mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                <div class="mdl-cell mdl-cell--8-col">
+                    <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Simple, non-modal dialog</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Some text.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                               href="openDialog()">Open dialog</a>
+                        </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                        Some text.
+                    <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Simple, modal dialog</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Some text.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                               href="(URL or function)">Open dialog</a>
+                        </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                           href="openDialog()">Open dialog</a>
+                    <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Simple, third dialog</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Some text.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                               href="(URL or function)">Open dialog</a>
+                        </div>
                     </div>
                 </div>
-                <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Simple, modal dialog</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Some text.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                           href="(URL or function)">Open dialog</a>
-                    </div>
-                </div>
-                <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Simple, third dialog</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Some text.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                           href="(URL or function)">Open dialog</a>
-                    </div>
-                </div>
-            </div>
-            <!--ul mdl="list">
-                <li class="mdl-list__item mdl-list__item--three-line">
+                <ul mdl="list">
+                    <li class="mdl-list__item mdl-list__item--three-line">
                 <span class="mdl-list__item-primary-content">
                     <span>Simple, non-modal dialog</span>
                     <span class="mdl-list__item-text-body">
                         Some description
                     </span>
                 </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                     <a class="mdl-list__item-secondary-action mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                        href="#">Open dialog</a>
                 </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line">
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
                 <span class="mdl-list__item-primary-content">
                     <span>Simple, modal dialog</span>
                     <span class="mdl-list__item-text-body">
                         Some description
                     </span>
                 </span>
-                    <span class="mdl-list__item-secondary-content">
+                        <span class="mdl-list__item-secondary-content">
                     <a class="mdl-list__item-secondary-action mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                        href="#">Open dialog</a>
                 </span>
-                </li>
-            </ul-->
-        <!--/main>
-    </div-->
+                    </li>
+                </ul>
+                <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle">
+                    <label class="mdl-textfield__label" for="dialogTitle">Dialog title...</label>
+                </div>
+                <button type="button" mdl="button" class="mdl-button--raised mdl-button--colored"
+                        click.delegate="openDialog()">Open
+                    dialog
+                </button>
+
+                <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                    <div class="mdl-tabs__tab-bar">
+                        <a href="#tab1" class="mdl-tabs__tab">Tab One X</a>
+                        <a href="#tab2" class="mdl-tabs__tab is-active">Tab Two</a>
+                        <a href="#tab3" class="mdl-tabs__tab">Tab Three</a>
+                    </div>
+                    <div class="mdl-tabs__panel" id="tab1">
+                        <p>First tab's content.</p>
+                    </div>
+                    <div class="mdl-tabs__panel" id="tab2">
+                        <p>Second tab's content.</p>
+                    </div>
+                    <div class="mdl-tabs__panel" id="tab3">
+                        <p>Third tab's content.</p>
+                    </div>
+                </div>
+
+                <div mdl="card" class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">
+                            Source code
+                        </h2>
+                    </div>
+                    <!--div class="mdl-card__supporting-text"-->
+                    <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                        <div class="mdl-tabs__tab-bar">
+                            <a href="#tab1" class="mdl-tabs__tab">Tab One X</a>
+                            <a href="#tab2" class="mdl-tabs__tab is-active">Tab Two</a>
+                            <a href="#tab3" class="mdl-tabs__tab">Tab Three</a>
+                        </div>
+                        <div class="mdl-tabs__panel" id="tab1">
+                            <p>First tab's content.</p>
+                        </div>
+                        <div class="mdl-tabs__panel" id="tab2">
+                            <p>Second tab's content.</p>
+                        </div>
+                        <div class="mdl-tabs__panel" id="tab3">
+                            <p>Third tab's content.</p>
+                        </div>
+                    </div>
+                    <!--/div-->
+                </div>
+
+        </main>
+    </div>
 </template>
