@@ -10,6 +10,7 @@ export class App {
     constructor(mdlDialogService) {
         this._mdlDialogService = mdlDialogService;
         this.dialogTitle = "";
+        this.modal=true;
     }
 
     openDialog() {
