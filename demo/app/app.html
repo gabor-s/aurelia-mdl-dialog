@@ -16,8 +16,8 @@
         </header>
         <main class="mdl-layout__content">
             <div mdl="grid" class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-                <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                <div class="mdl-cell mdl-cell--8-col">
                     <div mdl="grid" class="mdl-grid">
                         <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
@@ -31,32 +31,39 @@
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                                 anim id est laborum.
                                 <div mdl="grid" class="mdl-grid">
-                                    <div class="mdl-cell mdl-cell--12-col">
-                                        <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
-                                            <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle">
-                                            <label class="mdl-textfield__label" for="dialogTitle">Dialog title...</label>
+                                    <div class="mdl-cell mdl-cell--6-col">
+                                        <div mdl="grid" class="mdl-grid">
+                                            <div class="mdl-cell mdl-cell--12-col">
+                                                <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
+                                                    <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle">
+                                                    <label class="mdl-textfield__label" for="dialogTitle">Dialog title...</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div mdl="grid" class="mdl-grid">
+                                            <div class="mdl-cell mdl-cell--12-col">
+                                                <label mdl="switch" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="modal">
+                                                    <input type="checkbox" id="modal" class="mdl-switch__input" checked.bind="!nonModal">
+                                                    <span class="mdl-switch__label">Modal</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div mdl="grid" class="mdl-grid">
-                                    <div class="mdl-cell mdl-cell--12-col">
-                                        <label mdl="switch" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="modal">
-                                            <input type="checkbox" id="modal" class="mdl-switch__input" checked.bind="modal">
-                                            <span class="mdl-switch__label">Modal</span>
-                                        </label>
+                                    <div class="mdl-cell mdl-cell--6-col">
+                                        Result
                                     </div>
                                 </div>
                             </div>
                             <div class="mdl-card__actions mdl-card--border mdl-layout-spacer">
                                 <a mdl="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                                   href="openDialog()">Open dialog</a>
+                                   href="#" click.delegate="openDialog()">Open dialog</a>
                             </div>
                         </div>
                     </div>
                     <div mdl="grid" class="mdl-grid">
                         <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                                <h2 class="mdl-card__title-text">Source code of outer dialog</h2>
+                                <h2 class="mdl-card__title-text">Source code of dialog</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div mdl="grid" class="mdl-grid">
@@ -92,17 +99,17 @@
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                             <div class="mdl-tabs__tab-bar">
-                                                <a href="#tab1" class="mdl-tabs__tab is-active">HTML</a>
-                                                <a href="#tab2" class="mdl-tabs__tab">JavaScript</a>
-                                                <a href="#tab3" class="mdl-tabs__tab">CSS</a>
+                                                <a href="#tab4" class="mdl-tabs__tab is-active">HTML</a>
+                                                <a href="#tab5" class="mdl-tabs__tab">JavaScript</a>
+                                                <a href="#tab6" class="mdl-tabs__tab">CSS</a>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab1">
+                                            <div class="mdl-tabs__panel" id="tab4">
                                                 <p>First tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab2">
+                                            <div class="mdl-tabs__panel" id="tab5">
                                                 <p>Second tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab3">
+                                            <div class="mdl-tabs__panel" id="tab6">
                                                 <p>Third tab's content.</p>
                                             </div>
                                         </div>

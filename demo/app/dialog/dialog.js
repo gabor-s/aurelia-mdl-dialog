@@ -10,11 +10,11 @@ export class Dialog {
     constructor(mdlDialogService, controllerPromise) {
         this._mdlDialogService = mdlDialogService;
         this._controllerPromise = controllerPromise;
-        this.title = "Dialog title";
+        this.title = "Untitled dialog";
     }
 
     activate(model) {
-        this.title = model.title;
+        this.title = model.title || this.title;
     }
 
     openInnerDialog() {
