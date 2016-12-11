@@ -10,13 +10,13 @@ export class App {
     constructor(mdlDialogService) {
         this._mdlDialogService = mdlDialogService;
         this.dialogTitle = "";
-        this.nonModal = false;
+        this.modal = true;
     }
 
     openDialog() {
         this._mdlDialogService.open({
             viewModel: Dialog,
-            nonModal: this.nonModal,
+            nonModal: !this.modal,
             model: {
                 title: this.dialogTitle
             }
