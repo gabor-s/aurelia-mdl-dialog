@@ -1,5 +1,5 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
-import {InnerDialog} from 'app/inner-dialog/inner-dialog';
+import {InnerDialog} from './inner-dialog/inner-dialog';
 
 export class Dialog {
 
@@ -11,16 +11,25 @@ export class Dialog {
         this._mdlDialogService = mdlDialogService;
         this._controllerPromise = controllerPromise;
         this.title = "Untitled dialog";
+        this.availableItems = ['Aurelia', 'Material Design Lite', 'Dialog'];
+        this.selectedItems = [];
+        //this.textFromInnerDialog = '';
     }
 
     activate(model) {
         this.title = model.title || this.title;
     }
 
-    openInnerDialog() {
-        this._mdlDialogService.open({viewModel: InnerDialog, cssClass: 'inner-dialog'})
-            .then(dialogResult => {
-                // TODO:
+    showInnerDialog() {
+        this._mdlDialogService.open({
+            viewModel: InnerDialog,
+            cssClass: 'inner-dialog',
+            model: {
+                text: this.textFromInnerDialog
+            }
+        })
+            .then(text => {
+                this.textFromInnerDialog = text;
             })
             .catch(reason => {
                 // TODO:
@@ -30,7 +39,10 @@ export class Dialog {
     close() {
         this._controllerPromise
             .then(controller => {
-                controller.close('dialog1 result');
+                controller.close(JSON.stringify({
+                    selectedItems: this.selectedItems,
+                    textFromInnerDialog: this.textFromInnerDialog
+                }));
             });
     }
 }

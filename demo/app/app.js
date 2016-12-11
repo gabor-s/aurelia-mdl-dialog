@@ -11,9 +11,10 @@ export class App {
         this._mdlDialogService = mdlDialogService;
         this.dialogTitle = "";
         this.modal = true;
+        this.result = {};
     }
 
-    openDialog() {
+    showDialog() {
         this._mdlDialogService.open({
             viewModel: Dialog,
             nonModal: !this.modal,
@@ -22,7 +23,7 @@ export class App {
             }
         })
             .then(dialogResult => {
-                // TODO:
+                this.result = JSON.stringify(dialogResult);
             })
             .catch(reason => {
                 // TODO:
