@@ -1,28 +1,18 @@
 {
-  "name": "aurelia-mdl-dialog-demo",
-  "version": "0.1.0",
-  "description": "Demo for aurelia-mdl-dialog",
-  "scripts": {
-    "start": "webpack-dev-server"
-  },
-  "jspm": {
+    "name": "aurelia-mdl-dialog-demo",
+    "version": "0.1.0",
+    "description": "Demo for aurelia-mdl-dialog",
+    "scripts": {
+        "start": "webpack-dev-server"
+    },
     "dependencies": {
-      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
-      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.1",
-      "aurelia-mdl": "github:genadis/aurelia-mdl@^0.3.0",
-      "font-awesome": "npm:font-awesome@^4.7.0"
+        "aurelia-bootstrapper": "^1.0.0",
+        "aurelia-event-aggregator": "^1.0.1",
+        "font-awesome": "^4.7.0"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+        "webpack": "^2.2.0-rc.0",
+        "webpack-dev-server": "^2.2.0-rc.0",
+        "webpack-merge": "^1.1.1"
     }
-  },
-  "devDependencies": {
-    "jspm": "^0.16.45",
-    "local-web-server": "^1.2.6",
-    "webpack": "^2.2.0-rc.0",
-    "webpack-dev-server": "^2.2.0-rc.0",
-    "webpack-merge": "^1.1.1"
-  }
 }
