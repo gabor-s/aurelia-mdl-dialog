@@ -1,20 +1,52 @@
 /* eslint-env node */
 
-// const path = require('path');
+const path = require('path');
 const webpackMerge = require('webpack-merge');
+const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 
 let finalConfig = {};
 
 const commonConfig = {
     devtool: "cheap-eval-source-map",
     entry: {
-        app: './app/main.js'
+        app: './app/app.js',
+        aurelia: [
+            'aurelia-bootstrapper-webpack'/*,
+            'aurelia-framework',
+            'aurelia-logging-console',
+            'aurelia-templating-binding',
+            'aurelia-templating-resources',
+            'aurelia-templating-router',
+            'aurelia-history-browser',
+            'aurelia-event-aggregator'*/
+        ]
+    },
+    plugins: [
+        new AureliaWebpackPlugin({
+            src: path.resolve('./app')
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.html$/,
+                exclude: './index.html',
+                loader: 'html-loader'
+            }]
     }
 };
 
 const devConfig = {
     output: {
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     devServer: {
         contentBase: '.',

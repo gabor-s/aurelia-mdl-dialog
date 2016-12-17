@@ -6,12 +6,25 @@
         "start": "webpack-dev-server"
     },
     "dependencies": {
-        "aurelia-bootstrapper": "^1.0.0",
+        "aurelia-bootstrapper-webpack": "^1.1.0",
         "aurelia-event-aggregator": "^1.0.1",
+        "aurelia-framework": "^1.0.8",
+        "aurelia-history-browser": "^1.0.0",
+        "aurelia-logging-console": "^1.0.0",
+        "aurelia-templating-binding": "^1.1.0",
+        "aurelia-templating-resources": "^1.2.0",
+        "aurelia-templating-router": "^1.0.1",
         "font-awesome": "^4.7.0"
     },
     "devDependencies": {
-        "webpack": "^2.2.0-rc.0",
+        "aurelia-mdl": "^0.4.3",
+        "aurelia-webpack-plugin": "^1.2.0",
+        "babel-core": "^6.21.0",
+        "babel-loader": "^6.2.10",
+        "babel-preset-es2015": "^6.18.0",
+        "css-loader": "^0.26.1",
+        "html-loader": "^0.4.4",
+        "webpack": "^2.2.0-rc.1",
         "webpack-dev-server": "^2.2.0-rc.0",
         "webpack-merge": "^1.1.1"
     }

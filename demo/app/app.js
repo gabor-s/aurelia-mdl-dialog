@@ -1,5 +1,5 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
-import {Dialog} from 'app/dialog/dialog';
+import {Dialog} from './dialog/dialog';
 
 export class App {
 
