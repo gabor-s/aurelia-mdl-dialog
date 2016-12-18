@@ -19,7 +19,7 @@
     },
     "author": "Gábor Suhai (https://github.com/suhaig)",
     "dependencies": {
-        "aurelia-framework": "^1.0.7",
+        "aurelia-framework": "^1.0.8",
         "dialog-polyfill": "^0.4.5"
     },
     "devDependencies": {
