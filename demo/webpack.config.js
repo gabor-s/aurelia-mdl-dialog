@@ -1,29 +1,26 @@
 /* eslint-env node */
 
+const project = require('./package.json');
 const path = require('path');
 const webpackMerge = require('webpack-merge');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let finalConfig = {};
 
 const commonConfig = {
     devtool: "cheap-eval-source-map",
     entry: {
-        app: './app/app.js',
-        aurelia: [
-            'aurelia-bootstrapper-webpack'/*,
-            'aurelia-framework',
-            'aurelia-logging-console',
-            'aurelia-templating-binding',
-            'aurelia-templating-resources',
-            'aurelia-templating-router',
-            'aurelia-history-browser',
-            'aurelia-event-aggregator'*/
-        ]
+        app: ['./src/app/aurelia-config.js']
+    },
+    output: {
+        path: path.join(__dirname, 'dist')
     },
     plugins: [
-        new AureliaWebpackPlugin({
-            src: path.resolve('./app')
+        new AureliaWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            chunksSortMode: 'dependency'
         })
     ],
     module: {
@@ -33,7 +30,12 @@ const commonConfig = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015']
+                    presets: [
+                        ['es2015', {
+                            loose: true,
+                            module: false
+                        }]
+                    ]
                 }
             },
             {
@@ -72,7 +74,9 @@ switch (process.env.NODE_ENV) {
     case 'dev':
     case 'development':
     default:
+        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
         finalConfig = webpackMerge(commonConfig, devConfig);
 }
 
+console.log('finalConfig is '+JSON.stringify(finalConfig));
 module.exports = finalConfig;
