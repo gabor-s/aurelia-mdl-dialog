@@ -1,0 +1,7 @@
+<template>
+    <require from="dialog-polyfill/dialog-polyfill.css"></require>
+
+    <dialog mdl="dialog" ref="dialog" class.one-time="configuration.cssClass">
+        <compose view-model.bind="configuration.viewModel" model.bind="configuration.model" containerless></compose>
+    </dialog>
+</template>
