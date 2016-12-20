@@ -2,3 +2,4 @@
 aurelia-mdl-dialog.iml
 node_modules
 *.bundle.js
+dist
