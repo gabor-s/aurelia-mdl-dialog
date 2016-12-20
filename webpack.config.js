@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 const webpackMerge = require('webpack-merge');
+const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 
 const commonConfig = {
     entry: './src/mdl-dialog-service.js',
@@ -12,16 +13,12 @@ const commonConfig = {
         umdNamedDefine: true
     },
     externals: {
-        'dialog-polyfill': {
-            global: 'dialogPolyfill',
-            amd: 'dialogPolyfill',
-            commonjs: 'dialogPolyfill'
-        },
-        'aurelia-framework': {
-            amd: 'aurelia-framework',
-            commonjs: 'aurelia-framework'
-        }
+        'dialog-polyfill': true,
+        'aurelia-framework': true
     },
+    plugins: [
+        new AureliaWebpackPlugin()
+    ],
     module: {
         rules: [
             {
@@ -36,13 +33,9 @@ const commonConfig = {
                         }]
                     ]
                 }
-            },
-            {
-                test: /\.html$/,
-                include: /src/,
-                loader: 'html-loader'
             }]
-    }
+    },
+    devtool: 'cheap-module-source-map'
 };
 
 const devConfig = {};

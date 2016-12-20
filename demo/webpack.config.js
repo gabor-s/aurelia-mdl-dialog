@@ -51,7 +51,6 @@ const devConfig = {
         filename: '[name].bundle.js'
     },
     devServer: {
-        contentBase: '.',
         historyApiFallback: true
     }
 };
@@ -74,7 +73,7 @@ switch (process.env.NODE_ENV) {
     case 'dev':
     case 'development':
     default:
-        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
+        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-')), 'dialog-polyfill'];
         finalConfig = webpackMerge(commonConfig, devConfig);
 }
 

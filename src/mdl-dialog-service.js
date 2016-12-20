@@ -1,4 +1,3 @@
-import dialogTemplate from './mdl-dialog-service.html';
 import dialogPolyfill from 'dialog-polyfill';
 import {Container, ViewSlot, CompositionEngine, Origin, InlineViewStrategy} from 'aurelia-framework';
 
@@ -87,8 +86,7 @@ class MdlDialogViewModel {
     }
 
     getViewStrategy() {
-        return new InlineViewStrategy(dialogTemplate);
-        /*return new InlineViewStrategy(`
+        return new InlineViewStrategy(`
             <template>
                 <require from="dialog-polyfill/dialog-polyfill.css"></require>
 
@@ -96,6 +94,6 @@ class MdlDialogViewModel {
                     <compose view-model.bind="configuration.viewModel" model.bind="configuration.model" containerless></compose>
                 </dialog>
             </template>
-        `);*/
+        `);
     }
 }
