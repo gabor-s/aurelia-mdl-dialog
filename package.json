@@ -1,43 +1,43 @@
 {
-  "name": "aurelia-mdl-dialog",
-  "version": "1.0.0-beta.0",
-  "description": "Aurelia wrapper for Material Design Lite's Dialog component",
-  "main": "dist/mdl-dialog-service.js",
-  "keywords": [
-    "aurelia",
-    "material design",
-    "mdl",
-    "dialog"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/suhaig/aurelia-mdl-dialog.git"
-  },
-  "homepage": "https://github.com/suhaig/aurelia-mdl-dialog",
-  "bugs": {
-    "url": "https://github.com/suhaig/aurelia-mdl-dialog/issues"
-  },
-  "author": "Gábor Suhai (https://github.com/suhaig)",
-  "dependencies": {
-    "aurelia-framework": "^1.0.8",
-    "dialog-polyfill": "^0.4.5"
-  },
-  "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-register": "^6.18.0",
-    "eslint": "^3.11.1",
-    "eslint-loader": "^1.6.1",
-    "tape": "^4.6.3",
-    "webpack": "^2.2.0-rc.1",
-    "webpack-merge": "^1.1.2"
-  },
-  "scripts": {
-    "build": "npm run lint && npm run test",
-    "lint": "eslint src test",
-    "test": "tape -r babel-register test/**/*.js"
-  },
+    "name": "aurelia-mdl-dialog",
+    "version": "1.0.0-beta.0",
+    "description": "Aurelia wrapper for Material Design Lite's Dialog component",
+    "main": "dist/mdl-dialog-service.js",
+    "keywords": [
+        "aurelia",
+        "material design",
+        "mdl",
+        "dialog"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/suhaig/aurelia-mdl-dialog.git"
+    },
+    "homepage": "https://github.com/suhaig/aurelia-mdl-dialog",
+    "bugs": {
+        "url": "https://github.com/suhaig/aurelia-mdl-dialog/issues"
+    },
+    "author": "Gábor Suhai (https://github.com/suhaig)",
+    "dependencies": {
+        "aurelia-framework": "^1.0.8",
+        "dialog-polyfill": "^0.4.5"
+    },
+    "devDependencies": {
+        "babel-core": "^6.21.0",
+        "babel-loader": "^6.2.10",
+        "babel-preset-es2015": "^6.16.0",
+        "babel-register": "^6.18.0",
+        "eslint": "^3.11.1",
+        "eslint-loader": "^1.6.1",
+        "tape": "^4.6.3",
+        "webpack": "^2.2.0-rc.1",
+        "webpack-merge": "^1.1.2"
+    },
+    "scripts": {
+        "build": "npm run lint && npm run test",
+        "lint": "eslint src test",
+        "test": "tape -r babel-register test/**/*.js"
+    },
     "aurelia": {
         "build": {
             "resources": [

@@ -7,7 +7,7 @@ const commonConfig = {
     devtool: 'cheap-eval-source-map',
     entry: './src/mdl-dialog-service.js',
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'mdl-dialog-service.js',
         library: 'mdlDialogService',
         libraryTarget: 'umd',

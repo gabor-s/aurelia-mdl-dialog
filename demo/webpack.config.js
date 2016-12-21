@@ -14,14 +14,15 @@ const commonConfig = {
         app: ['./src/app/aurelia-config.js']
     },
     output: {
-        path: path.join(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new AureliaWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             chunksSortMode: 'dependency'
-        })
+        }),
+
     ],
     module: {
         rules: [
@@ -47,7 +48,7 @@ const commonConfig = {
             {
                 test: /\.html$/,
                 exclude: /src\/index.html/,
-                loader: 'html-loader'
+                loader: 'raw-loader'
             }]
     }
 };
