@@ -23,21 +23,26 @@
     "dialog-polyfill": "^0.4.5"
   },
   "devDependencies": {
-    "aurelia-webpack-plugin": "^1.2.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.16.0",
     "babel-register": "^6.18.0",
-    "css-loader": "^0.26.1",
     "eslint": "^3.11.1",
-    "html-loader": "^0.4.4",
+    "eslint-loader": "^1.6.1",
     "tape": "^4.6.3",
-    "webpack": "^2.2.0-rc.0",
+    "webpack": "^2.2.0-rc.1",
     "webpack-merge": "^1.1.2"
   },
   "scripts": {
     "build": "npm run lint && npm run test",
     "lint": "eslint src test",
     "test": "tape -r babel-register test/**/*.js"
-  }
+  },
+    "aurelia": {
+        "build": {
+            "resources": [
+                "dialog-polyfill/dialog-polyfill.css"
+            ]
+        }
+    }
 }

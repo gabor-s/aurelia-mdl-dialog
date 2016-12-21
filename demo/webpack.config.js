@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let finalConfig = {};
 
 const commonConfig = {
-    devtool: "cheap-eval-source-map",
+    devtool: 'cheap-eval-source-map',
     entry: {
         app: ['./src/app/aurelia-config.js']
     },
@@ -26,6 +26,12 @@ const commonConfig = {
     module: {
         rules: [
             {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader'
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
@@ -40,7 +46,7 @@ const commonConfig = {
             },
             {
                 test: /\.html$/,
-                exclude: './index.html',
+                exclude: /src\/index.html/,
                 loader: 'html-loader'
             }]
     }
@@ -73,9 +79,9 @@ switch (process.env.NODE_ENV) {
     case 'dev':
     case 'development':
     default:
-        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-')), 'dialog-polyfill'];
+        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
         finalConfig = webpackMerge(commonConfig, devConfig);
 }
 
-console.log('finalConfig is '+JSON.stringify(finalConfig));
+//console.log('finalConfig is '+JSON.stringify(finalConfig));
 module.exports = finalConfig;

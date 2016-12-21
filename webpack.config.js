@@ -1,12 +1,13 @@
 /* eslint-env node */
 
+const path = require('path');
 const webpackMerge = require('webpack-merge');
-const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 
 const commonConfig = {
+    devtool: 'cheap-eval-source-map',
     entry: './src/mdl-dialog-service.js',
     output: {
-        path: './dist',
+        path: path.join(__dirname, 'dist'),
         filename: 'mdl-dialog-service.js',
         library: 'mdlDialogService',
         libraryTarget: 'umd',
@@ -16,14 +17,17 @@ const commonConfig = {
         'dialog-polyfill': true,
         'aurelia-framework': true
     },
-    plugins: [
-        new AureliaWebpackPlugin()
-    ],
     module: {
         rules: [
             {
+                enforce: 'pre',
                 test: /\.js$/,
-                include: /src/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader'
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
                     presets: [
@@ -35,12 +39,13 @@ const commonConfig = {
                 }
             }]
     },
-    devtool: 'cheap-module-source-map'
 };
 
 const devConfig = {};
 
-const prodConfig = {};
+const prodConfig = {
+    // set failOnError and failOnWarning to true in eslint-loader configuration
+};
 
 let finalConfig = {};
 switch (process.env.NODE_ENV) {
