@@ -13,7 +13,7 @@ export default class MdlDialogService {
         this._compositionEngine = compositionEngine;
     }
 
-    open(configuration) {
+    show(configuration) {
         if (typeof configuration.viewModel !== 'function' && typeof configuration.viewModel !== 'string') {
             throw new Error('viewModel is a mandatory configuration property and it has to be a function or a string');
         }
