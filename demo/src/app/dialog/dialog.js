@@ -21,7 +21,7 @@ export class Dialog {
     }
 
     showInnerDialog() {
-        this._mdlDialogService.open({
+        this._mdlDialogService.show({
             viewModel: InnerDialog,
             cssClass: 'inner-dialog',
             model: {

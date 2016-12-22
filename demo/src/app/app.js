@@ -15,7 +15,7 @@ export class App {
     }
 
     showDialog() {
-        this._mdlDialogService.open({
+        this._mdlDialogService.show({
             viewModel: Dialog,
             nonModal: !this.modal,
             model: {
