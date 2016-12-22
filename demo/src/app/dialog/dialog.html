@@ -1,9 +1,16 @@
 <template>
+    <require from="./dialog.css"></require>
+
     <h4 class="mdl-dialog__title">${title}</h4>
     <div class="mdl-dialog__content">
-        <p>Select some items. The selected items will be part of the dialog result.</p>
-        <label mdl="checkbox" for="item-${$index}" repeat.for="item of availableItems" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-            <input type="checkbox" id="item-${$index}" value.bind="item" checked.bind="selectedItems" class="mdl-checkbox__input">
+        <p>Select some items. The selected items will be part of the dialog's return value.<br>
+        The return value must be a
+            <a href="https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element"
+               target="_blank">string</a>, so in this demo we stringify everything.</p>
+        <label mdl="checkbox" for="item-${$index}" repeat.for="item of availableItems"
+               class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+            <input type="checkbox" id="item-${$index}" value.bind="item" checked.bind="selectedItems"
+                   class="mdl-checkbox__input" autofocus>
             <span class="mdl-checkbox__label">${item}</span>
         </label>
     </div>
