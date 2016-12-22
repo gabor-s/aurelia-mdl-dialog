@@ -23,7 +23,10 @@ const commonConfig = {
                 enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'eslint-loader'
+                loader: 'eslint-loader',
+                options: {
+                    emitWarning: true
+                }
             },
             {
                 test: /\.js$/,
@@ -44,22 +47,27 @@ const commonConfig = {
 const devConfig = {};
 
 const prodConfig = {
-    // set failOnError and failOnWarning to true in eslint-loader configuration
+    devtool: 'source-map'
 };
 
-let finalConfig = {};
-switch (process.env.NODE_ENV) {
-    case 'prod':
-    case 'production':
-        finalConfig = webpackMerge(commonConfig, prodConfig);
-        break;
-    case 'test':
-    case 'testing':
-        break;
-    case 'dev':
-    case 'development':
-    default:
-        finalConfig = webpackMerge(commonConfig, devConfig);
+module.exports = function (environment) {
+    let finalConfig = {};
+    switch (environment) {
+        case 'prod':
+        case 'production':
+            finalConfig = webpackMerge(commonConfig, prodConfig);
+            finalConfig.module.rules[0].options = {
+                failOnWarning: true,
+                failOnError: true
+            };
+            break;
+        case 'test':
+        case 'testing':
+            break;
+        case 'dev':
+        case 'development':
+        default:
+            finalConfig = webpackMerge(commonConfig, devConfig);
+    }
+    return finalConfig;
 }
-
-module.exports = finalConfig;
