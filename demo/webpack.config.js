@@ -47,8 +47,8 @@ const commonConfig = {
             },
             {
                 test: /\.html$/,
-                exclude: /src\/index.html/,
-                loader: 'raw-loader'
+                exclude: /src\/index.html/, // node-modules???
+                loader: 'html-loader'
             }]
     }
 };
