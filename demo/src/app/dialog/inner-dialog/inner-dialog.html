@@ -1,7 +1,10 @@
 <template>
+    <require from="./inner-dialog.css"></require>
+
     <h4 class="mdl-dialog__title">Inner dialog</h4>
     <div class="mdl-dialog__content">
         <p>Add some text. The text will be returned to the previous dialog.</p>
+        <p>This dialog was intentionally positioned this way.</p>
         <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="text" value.bind="text">
             <label class="mdl-textfield__label" for="text">Some text</label>

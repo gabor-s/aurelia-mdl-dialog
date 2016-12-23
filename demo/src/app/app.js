@@ -17,6 +17,7 @@ export class App {
     showDialog() {
         this._mdlDialogService.show({
             viewModel: Dialog,
+            cssClass: 'dialog',
             nonModal: !this.modal,
             model: {
                 title: this.dialogTitle
