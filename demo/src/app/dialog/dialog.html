@@ -13,8 +13,11 @@
                    class="mdl-checkbox__input" autofocus>
             <span class="mdl-checkbox__label">${item}</span>
         </label>
+        <div mdl="textfield" class="mdl-textfield mdl-js-textfield" ref="inputForInnerDialogText">
+            <input class="mdl-textfield__input" type="text" id="textFromInnerDialog" value.one-way="textFromInnerDialog" disabled>
+            <label class="mdl-textfield__label" for="textFromInnerDialog">Text from inner dialog</label>
+        </div>
     </div>
-    <p>${textFromInnerDialog}</p>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
         <button type="button" class="mdl-button mdl-button--colored" click.delegate="showInnerDialog()">Show inner dialog</button>
         <button type="button" class="mdl-button" click.delegate="close()">Close</button>

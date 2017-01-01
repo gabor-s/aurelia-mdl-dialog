@@ -1,5 +1,5 @@
 .inner-dialog {
     position: fixed;
-    top: 10%;
+    top: 10%; /* needed for Firefox */
     transform: translate(50%, -10%);
 }
