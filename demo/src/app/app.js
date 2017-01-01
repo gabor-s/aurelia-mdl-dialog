@@ -20,11 +20,13 @@ export class App {
             cssClass: 'dialog',
             nonModal: !this.modal,
             model: {
-                title: this.dialogTitle
+                title: this.dialogTitle,
+                textFromInnerDialog: this.result.textFromInnerDialog
             }
         })
             .then(dialogResult => {
-                this.result = JSON.stringify(dialogResult);
+                this.result = JSON.parse(dialogResult);
+                this.inputForInnerDialogText.MaterialTextfield.change(this.result.textFromInnerDialog);
             })
             .catch(reason => {
                 // TODO:

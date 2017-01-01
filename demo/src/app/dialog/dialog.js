@@ -18,6 +18,7 @@ export class Dialog {
 
     activate(model) {
         this.title = model.title || this.title;
+        this.textFromInnerDialog = model.textFromInnerDialog;
     }
 
     showInnerDialog() {
