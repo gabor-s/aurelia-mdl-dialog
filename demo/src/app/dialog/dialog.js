@@ -1,25 +1,19 @@
-import {BindingEngine} from 'aurelia-framework';
 import MdlDialogService from 'aurelia-mdl-dialog';
 import {InnerDialog} from './inner-dialog/inner-dialog';
 
 export class Dialog {
 
     static inject() {
-        return [BindingEngine, MdlDialogService, Promise];
+        return [MdlDialogService, Promise];
     }
 
-    constructor(bindingEngine, mdlDialogService, controllerPromise) {
+    constructor(mdlDialogService, controllerPromise) {
         this._mdlDialogService = mdlDialogService;
         this._controllerPromise = controllerPromise;
         this.title = "Untitled dialog";
         this.availableItems = ['Aurelia', 'Material Design Lite', 'Dialog'];
         this.selectedItems = [];
         this.textFromInnerDialog = '';
-        this._propertyObserverSubscription = bindingEngine.propertyObserver(this, 'textFromInnerDialog')
-            .subscribe( (newValue, oldValue) => {
-                //this.inputForInnerDialogText.className+=' is-dirty';
-                //this.inputForInnerDialogText.MaterialTextfield.checkDirty();
-            });
     }
 
     activate(model) {
@@ -35,11 +29,10 @@ export class Dialog {
             }
         })
             .then(text => {
+                // https://github.com/google/material-design-lite/issues/903
+                // https://github.com/google/material-design-lite/issues/4089
                 this.textFromInnerDialog = text;
-                //this.inputForInnerDialogText.className+=' is-dirty';
-                setTimeout(() => {
-                    this.inputForInnerDialogText.MaterialTextfield.checkDirty();
-                }, 25);
+                this.inputForInnerDialogText.MaterialTextfield.change(this.textFromInnerDialog);
             })
             .catch(reason => {
                 // TODO:
@@ -49,7 +42,6 @@ export class Dialog {
     close() {
         this._controllerPromise
             .then(controller => {
-                this._propertyObserverSubscription.dispose();
                 controller.close(JSON.stringify({
                     selectedItems: this.selectedItems,
                     textFromInnerDialog: this.textFromInnerDialog
