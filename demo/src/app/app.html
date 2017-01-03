@@ -1,5 +1,6 @@
 <template>
     <require from="encapsulated-mdl/dist/material.amber-pink.min.css"></require>
+    <require from="prismjs/themes/prism.css"></require>
     <!--require from="font-awesome/css/font-awesome.min.css"></require-->
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -72,10 +73,57 @@
                                                 <a href="#appHtml" class="mdl-tabs__tab">HTML</a>
                                             </div>
                                             <div class="mdl-tabs__panel is-active" id="appEs2015">
-                                                <p>First tab's content.</p>
+                                                <pre>
+                                                    <code class="language-javascript" au-syntax>
+import MdlDialogService from 'aurelia-mdl-dialog';
+import {Dialog} from './dialog/dialog';
+
+export class App {
+
+    static inject() {
+        return [MdlDialogService];
+    }
+
+    constructor(mdlDialogService) {
+        this._mdlDialogService = mdlDialogService;
+        this.dialogTitle = '';
+        this.modal = true;
+        this.result = {
+            textFromInnerDialog: '',
+            selectedItems: []
+        };
+    }
+
+    showDialog() {
+        this._mdlDialogService.show({
+            viewModel: Dialog,
+            cssClass: 'dialog',
+            nonModal: !this.modal,
+            model: {
+                title: this.dialogTitle,
+                textFromInnerDialog: this.result.textFromInnerDialog,
+                selectedItems: this.result.selectedItems
+            }
+        })
+            .then(dialogResult => {
+                this.result = JSON.parse(dialogResult);
+                this.textFieldForInnerDialogText.MaterialTextfield.change(this.result.textFromInnerDialog);
+                this.textFieldForSelectedItems.MaterialTextfield.change(this.result.selectedItems.join());
+            })
+            .catch(reason => {
+                // TODO:
+            });
+    }
+}
+                                                    </code>
+                                                </pre>
                                             </div>
                                             <div class="mdl-tabs__panel" id="appHtml">
-                                                <p>Second tab's content.</p>
+                                                <pre>
+                                                    <code class="language-html">
+
+                                                    </code>
+                                                </pre>
                                             </div>
                                         </div>
                                     </div>
