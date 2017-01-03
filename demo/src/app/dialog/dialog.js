@@ -19,6 +19,7 @@ export class Dialog {
     activate(model) {
         this.title = model.title || this.title;
         this.textFromInnerDialog = model.textFromInnerDialog;
+        this.selectedItems = model.selectedItems;
     }
 
     showInnerDialog() {
@@ -30,7 +31,6 @@ export class Dialog {
             }
         })
             .then(text => {
-                // https://github.com/google/material-design-lite/issues/903
                 // https://github.com/google/material-design-lite/issues/4089
                 this.textFromInnerDialog = text;
                 this.inputForInnerDialogText.MaterialTextfield.change(this.textFromInnerDialog);
