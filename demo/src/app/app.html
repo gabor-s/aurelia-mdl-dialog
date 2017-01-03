@@ -43,7 +43,7 @@
                                     <div class="mdl-cell mdl-cell--6-col">
                                         <div mdl="textfield" class="mdl-textfield mdl-js-textfield" ref="textFieldForSelectedItems">
                                             <input class="mdl-textfield__input" type="text" id="selectedItems" disabled>
-                                            <label class="mdl-textfield__label" for="selectedItems">Selected items</label>
+                                            <label class="mdl-textfield__label" for="selectedItems">Selected items from dialog</label>
                                         </div>
                                         <div mdl="textfield" class="mdl-textfield mdl-js-textfield" ref="textFieldForInnerDialogText">
                                             <input class="mdl-textfield__input" type="text" id="textFromInnerDialog" disabled>
@@ -61,24 +61,49 @@
                     <div mdl="grid" class="mdl-grid">
                         <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                                <h2 class="mdl-card__title-text">Source code of dialog</h2>
+                                <h2 class="mdl-card__title-text">app source code</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div mdl="grid" class="mdl-grid">
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                             <div class="mdl-tabs__tab-bar">
-                                                <a href="#tab1" class="mdl-tabs__tab is-active">HTML</a>
-                                                <a href="#tab2" class="mdl-tabs__tab">JavaScript</a>
-                                                <a href="#tab3" class="mdl-tabs__tab">CSS</a>
+                                                <a href="#appEs2015" class="mdl-tabs__tab is-active">ES2015</a>
+                                                <a href="#appHtml" class="mdl-tabs__tab">HTML</a>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab1">
+                                            <div class="mdl-tabs__panel is-active" id="appEs2015">
                                                 <p>First tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab2">
+                                            <div class="mdl-tabs__panel" id="appHtml">
                                                 <p>Second tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div mdl="grid" class="mdl-grid">
+                        <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                            <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                                <h2 class="mdl-card__title-text">dialog source code</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div mdl="grid" class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                                            <div class="mdl-tabs__tab-bar">
+                                                <a href="#dialogEs2015" class="mdl-tabs__tab is-active">ES2015</a>
+                                                <a href="#dialogHtml" class="mdl-tabs__tab">HTML</a>
+                                                <a href="#dialogCss" class="mdl-tabs__tab">CSS</a>
+                                            </div>
+                                            <div class="mdl-tabs__panel is-active" id="dialogEs2015">
+                                                <p>First tab's content.</p>
+                                            </div>
+                                            <div class="mdl-tabs__panel" id="dialogHtml">
+                                                <p>Second tab's content.</p>
+                                            </div>
+                                            <div class="mdl-tabs__panel" id="dialogCss">
                                                 <p>Third tab's content.</p>
                                             </div>
                                         </div>
@@ -90,24 +115,24 @@
                     <div mdl="grid" class="mdl-grid">
                         <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                                <h2 class="mdl-card__title-text">Source code of inner dialog</h2>
+                                <h2 class="mdl-card__title-text">inner dialog source code</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div mdl="grid" class="mdl-grid">
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <div mdl="tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                                             <div class="mdl-tabs__tab-bar">
-                                                <a href="#tab4" class="mdl-tabs__tab is-active">HTML</a>
-                                                <a href="#tab5" class="mdl-tabs__tab">JavaScript</a>
-                                                <a href="#tab6" class="mdl-tabs__tab">CSS</a>
+                                                <a href="#innerDialogEs2015" class="mdl-tabs__tab is-active">ES2015</a>
+                                                <a href="#innerDialogHtml" class="mdl-tabs__tab">HTML</a>
+                                                <a href="#innerDialogCss" class="mdl-tabs__tab">CSS</a>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab4">
+                                            <div class="mdl-tabs__panel is-active" id="innerDialogEs2015">
                                                 <p>First tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab5">
+                                            <div class="mdl-tabs__panel" id="innerDialogHtml">
                                                 <p>Second tab's content.</p>
                                             </div>
-                                            <div class="mdl-tabs__panel" id="tab6">
+                                            <div class="mdl-tabs__panel" id="innerDialogCss">
                                                 <p>Third tab's content.</p>
                                             </div>
                                         </div>
