@@ -32,9 +32,6 @@ export class App {
                 this.result = JSON.parse(dialogResult);
                 this.textFieldForInnerDialogText.MaterialTextfield.change(this.result.textFromInnerDialog);
                 this.textFieldForSelectedItems.MaterialTextfield.change(this.result.selectedItems.join());
-            })
-            .catch(reason => {
-                // TODO:
             });
     }
 }
