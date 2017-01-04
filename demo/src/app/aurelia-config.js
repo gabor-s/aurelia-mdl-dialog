@@ -1,5 +1,7 @@
-import 'prismjs';
+/* Prism import for configuration
+import * as Prism from "prismjs";
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
+*/
 
 export function configure(aurelia) {
 

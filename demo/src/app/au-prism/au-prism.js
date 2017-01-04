@@ -1,4 +1,4 @@
-import 'prismjs';
+import * as Prism from "prismjs";
 
 export class AuPrismCustomAttribute {
 
