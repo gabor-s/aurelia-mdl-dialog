@@ -34,9 +34,6 @@ export class Dialog {
                 // https://github.com/google/material-design-lite/issues/4089
                 this.textFromInnerDialog = text;
                 this.inputForInnerDialogText.MaterialTextfield.change(this.textFromInnerDialog);
-            })
-            .catch(reason => {
-                // TODO:
             });
     }
 
