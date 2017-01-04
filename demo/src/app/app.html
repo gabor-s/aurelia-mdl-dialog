@@ -76,50 +76,14 @@
                                             <div class="mdl-tabs__panel is-active" id="appEs2015">
                                                 <pre>
                                                     <code class="language-javascript" au-prism>
-import MdlDialogService from 'aurelia-mdl-dialog';
-import {Dialog} from './dialog/dialog';
-
-export class App {
-
-    static inject() {
-        return [MdlDialogService];
-    }
-
-    constructor(mdlDialogService) {
-        this._mdlDialogService = mdlDialogService;
-        this.dialogTitle = '';
-        this.modal = true;
-        this.result = {
-            textFromInnerDialog: '',
-            selectedItems: []
-        };
-    }
-
-    showDialog() {
-        this._mdlDialogService.show({
-            viewModel: Dialog,
-            cssClass: 'dialog',
-            nonModal: !this.modal,
-            model: {
-                title: this.dialogTitle,
-                textFromInnerDialog: this.result.textFromInnerDialog,
-                selectedItems: this.result.selectedItems
-            }
-        })
-            .then(dialogResult => {
-                this.result = JSON.parse(dialogResult);
-                this.textFieldForInnerDialogText.MaterialTextfield.change(this.result.textFromInnerDialog);
-                this.textFieldForSelectedItems.MaterialTextfield.change(this.result.selectedItems.join());
-            });
-    }
-}
+                                                        ${sources.app.es2015}
                                                     </code>
                                                 </pre>
                                             </div>
                                             <div class="mdl-tabs__panel" id="appHtml">
                                                 <pre>
-                                                    <code class="language-html">
-
+                                                    <code class="language-html" au-prism>
+                                                        ${sources.app.html}
                                                     </code>
                                                 </pre>
                                             </div>
@@ -144,13 +108,25 @@ export class App {
                                                 <a href="#dialogCss" class="mdl-tabs__tab">CSS</a>
                                             </div>
                                             <div class="mdl-tabs__panel is-active" id="dialogEs2015">
-                                                <p>First tab's content.</p>
+                                                <pre>
+                                                    <code class="language-javascript" au-prism>
+                                                        ${sources.dialog.es2015}
+                                                    </code>
+                                                </pre>
                                             </div>
                                             <div class="mdl-tabs__panel" id="dialogHtml">
-                                                <p>Second tab's content.</p>
+                                                <pre>
+                                                    <code class="language-javascript" au-prism>
+                                                        ${sources.dialog.html}
+                                                    </code>
+                                                </pre>
                                             </div>
                                             <div class="mdl-tabs__panel" id="dialogCss">
-                                                <p>Third tab's content.</p>
+                                                <pre>
+                                                    <code class="language-javascript" au-prism>
+                                                        ${sources.dialog.css}
+                                                    </code>
+                                                </pre>
                                             </div>
                                         </div>
                                     </div>

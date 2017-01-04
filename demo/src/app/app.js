@@ -1,5 +1,10 @@
 import MdlDialogService from 'aurelia-mdl-dialog';
 import {Dialog} from './dialog/dialog';
+import {default as appJsSource} from '!!raw-loader!./app.js';
+import {default as appHtmlSource} from '!!raw-loader!./app.html';
+import {default as dialogJsSource} from '!!raw-loader!./dialog/dialog.js';
+import {default as dialogHtmlSource} from '!!raw-loader!./dialog/dialog.html';
+import {default as dialogCssSource} from '!!raw-loader!./dialog/dialog.css';
 
 export class App {
 
@@ -14,6 +19,17 @@ export class App {
         this.result = {
             textFromInnerDialog: '',
             selectedItems: []
+        };
+        this.sources = {
+            app: {
+                es2015: appJsSource,
+                html: appHtmlSource
+            },
+            dialog: {
+                es2015: dialogJsSource,
+                html: dialogHtmlSource,
+                css: dialogCssSource
+            }
         };
     }
 

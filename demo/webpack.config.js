@@ -21,8 +21,7 @@ const commonConfig = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             chunksSortMode: 'dependency'
-        }),
-
+        })
     ],
     module: {
         rules: [

@@ -1,14 +1,13 @@
-/* Prism import for configuration
-import * as Prism from "prismjs";
+/* eslint-disable no-unused-vars */
+import * as Prism from "prismjs"; // needed for the next import
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
-*/
 
 export function configure(aurelia) {
 
     /* Prism configuration can go here, e.g.:
 
     Prism.plugins.NormalizeWhitespace.setDefaults({
-        break-lines: 72
+        'break-lines': 72
     });
 
     */
