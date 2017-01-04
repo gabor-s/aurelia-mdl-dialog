@@ -5,6 +5,9 @@ import {default as appHtmlSource} from '!!raw-loader!./app.html';
 import {default as dialogJsSource} from '!!raw-loader!./dialog/dialog.js';
 import {default as dialogHtmlSource} from '!!raw-loader!./dialog/dialog.html';
 import {default as dialogCssSource} from '!!raw-loader!./dialog/dialog.css';
+import {default as innerDialogJsSource} from '!!raw-loader!./dialog/inner-dialog/inner-dialog.js';
+import {default as innerDialogHtmlSource} from '!!raw-loader!./dialog/inner-dialog/inner-dialog.html';
+import {default as innerDialogCssSource} from '!!raw-loader!./dialog/inner-dialog/inner-dialog.css';
 
 export class App {
 
@@ -29,6 +32,11 @@ export class App {
                 es2015: dialogJsSource,
                 html: dialogHtmlSource,
                 css: dialogCssSource
+            },
+            innerDialog: {
+                es2015: innerDialogJsSource,
+                html: innerDialogHtmlSource,
+                css: innerDialogCssSource
             }
         };
     }
