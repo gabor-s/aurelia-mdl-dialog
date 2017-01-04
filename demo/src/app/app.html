@@ -1,6 +1,7 @@
 <template>
+    <require from="./au-prism/au-prism"></require>
     <require from="encapsulated-mdl/dist/material.amber-pink.min.css"></require>
-    <require from="prismjs/themes/prism.css"></require>
+    <require from="prismjs/themes/prism-tomorrow.css"></require>
     <!--require from="font-awesome/css/font-awesome.min.css"></require-->
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -74,7 +75,7 @@
                                             </div>
                                             <div class="mdl-tabs__panel is-active" id="appEs2015">
                                                 <pre>
-                                                    <code class="language-javascript" au-syntax>
+                                                    <code class="language-javascript" au-prism>
 import MdlDialogService from 'aurelia-mdl-dialog';
 import {Dialog} from './dialog/dialog';
 

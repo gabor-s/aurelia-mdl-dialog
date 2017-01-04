@@ -14,10 +14,10 @@
         "aurelia-mdl": "^0.4.3",
         "aurelia-mdl-dialog": "file:///home/suhaig/Development/projects/aurelia-mdl-dialog",
         "aurelia-polyfills": "^1.1.1",
-        "aurelia-syntax-highlighter": "0.0.4",
         "aurelia-templating-binding": "^1.1.0",
         "aurelia-templating-resources": "^1.2.0",
-        "aurelia-templating-router": "^1.0.1"
+        "aurelia-templating-router": "^1.0.1",
+        "prismjs": "^1.6.0"
     },
     "devDependencies": {
         "aurelia-webpack-plugin": "^1.2.0",
@@ -34,8 +34,7 @@
     "aurelia": {
         "build": {
             "resources": [
-                "aurelia-mdl/mdl.js",
-                "aurelia-syntax-highlighter/syntax-highlighter.js"
+                "aurelia-mdl/mdl.js"
             ]
         }
     }
