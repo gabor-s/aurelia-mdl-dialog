@@ -29,14 +29,20 @@
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div mdl="grid" class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                     ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                                     ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                                    <p>Non modal dialog is disabled because of this
+                                        <a href="https://github.com/suhaig/aurelia-mdl-dialog/issues/2"
+                                           target="_blank">issue</a>.
+                                    </p>
+                                    </div>
                                     <div class="mdl-cell mdl-cell--6-col">
                                         <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
-                                            <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle">
+                                            <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle" autofocus>
                                             <label class="mdl-textfield__label" for="dialogTitle">Dialog title</label>
                                         </div>
                                         <label mdl="switch" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="modal">
