@@ -5,8 +5,7 @@
     <div class="mdl-dialog__content">
         <p>Select some items. The selected items will be part of the dialog's return value.
         The return value must be a
-            <a href="https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element"
-               target="_blank">DOMString</a>, so in this demo we stringify the return value.</p>
+            <a href="https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element">DOMString</a>, so in this demo we stringify the return value.</p>
         <label mdl="checkbox" for="item-${$index}" repeat.for="item of availableItems"
                class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
             <input type="checkbox" id="item-${$index}" value.bind="item" checked.bind="selectedItems"
