@@ -2,7 +2,7 @@
 <template>
     <require from="./au-prism/au-prism"></require>
     <require from="./app.css"></require>
-    <require from="encapsulated-mdl/dist/material.purple-deep_orange.min.css"></require>
+    <require from="encapsulated-mdl/dist/material.purple-pink.min.css"></require>
     <require from="prismjs/themes/prism-tomorrow.css"></require>
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -22,7 +22,6 @@
                 <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
                 <div class="mdl-cell mdl-cell--8-col">
                     <div mdl="grid" class="mdl-grid">
-                        <!-- remove-end -->
                         <div mdl="card" class="mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
                                 <h2 class="mdl-card__title-text">Demo</h2>
@@ -30,17 +29,12 @@
                             <div class="mdl-card__supporting-text">
                                 <div mdl="grid" class="mdl-grid">
                                     <div class="mdl-cell mdl-cell--12-col">
-                                        This is a live demo of the Aurelia wrapper for Material Design Lite's
-                                        <a href="https://getmdl.io/components/index.html#dialog-section">Dialog</a> component.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                    <p>Non modal dialog is disabled because of this
-                                        <a href="https://github.com/suhaig/aurelia-mdl-dialog/issues/2">issue</a>.
-                                    </p>
+                                        <p>Set the title of the dialog. The input fields on the right will be filled with values from the dialogs.</p>
+                                        <p>Non modal dialog is disabled because of this
+                                            <a href="https://github.com/suhaig/aurelia-mdl-dialog/issues/2">issue</a>.
+                                        </p>
                                     </div>
+                                    <!-- remove-end -->
                                     <div class="mdl-cell mdl-cell--6-col">
                                         <div mdl="textfield" class="mdl-textfield mdl-js-textfield">
                                             <input class="mdl-textfield__input" type="text" id="dialogTitle" value.bind="dialogTitle" autofocus>
