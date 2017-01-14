@@ -1,7 +1,7 @@
 # aurelia-mdl-dialog
 Aurelia wrapper for [Material Design Lite's Dialog](https://getmdl.io/components/#dialog-section) component.
 
-## Live demo
+## <a name="live-demo"></a>Live demo
 The live demo is ...
 
 A live demo can be found [here]().
@@ -22,6 +22,7 @@ return a value.
 ### A simple dialog
 
 In this example a simple dialog will be shown....
+For a more complex example please check the [live demo](#live-demo).
 
 #### ViewModel
 
@@ -105,6 +106,7 @@ export class App {
 ...
 
 A dialog cannot be closed from the caller, only from the dialog itself.
+
 
 ## MdlDialogService API
 
