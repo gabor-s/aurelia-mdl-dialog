@@ -7,9 +7,9 @@ export class Dialog {
         return [MdlDialogService, Promise];
     }
 
-    constructor(mdlDialogService, controllerPromise) {
+    constructor(mdlDialogService, dialogControllerPromise) {
         this._mdlDialogService = mdlDialogService;
-        this._controllerPromise = controllerPromise;
+        this._dialogControllerPromise = dialogControllerPromise;
         this.title = "Untitled dialog";
         this.availableItems = ['Aurelia', 'Material Design Lite', 'Dialog'];
         this.selectedItems = [];
@@ -38,9 +38,9 @@ export class Dialog {
     }
 
     close() {
-        this._controllerPromise
-            .then(controller => {
-                controller.close(JSON.stringify({
+        this._dialogControllerPromise
+            .then(dialogController => {
+                dialogController.close(JSON.stringify({
                     selectedItems: this.selectedItems,
                     textFromInnerDialog: this.textFromInnerDialog
                 }));
