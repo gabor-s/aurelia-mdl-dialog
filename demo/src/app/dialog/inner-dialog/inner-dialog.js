@@ -1,14 +1,11 @@
-import MdlDialogService from 'aurelia-mdl-dialog';
-
 export class InnerDialog {
 
     static inject() {
-        return [MdlDialogService, Promise];
+        return [Promise];
     }
 
-    constructor(mdlDialogService, controllerPromise) {
-        this._mdlDialogService = mdlDialogService;
-        this._controllerPromise = controllerPromise;
+    constructor(dialogControllerPromise) {
+        this._dialogControllerPromise = dialogControllerPromise;
     }
 
     activate(model) {
@@ -16,9 +13,9 @@ export class InnerDialog {
     }
 
     close() {
-        this._controllerPromise
-            .then(controller => {
-                controller.close(this.text);
+        this._dialogControllerPromise
+            .then(dialogController => {
+                dialogController.close(this.text);
             });
     }
 }
