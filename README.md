@@ -122,6 +122,9 @@ The dialog cannot be closed from the caller, only from the dialog itself. As sho
 a ```DialogController``` object is available in the dialog and this object can be used to close the dialog and 
 return a value. 
 
+#### Canceling the dialog
+
+TODO!!!
 
 ## API
 
@@ -216,6 +219,10 @@ TODO!!!
 
 Tested only on **Chrome 55** and **Firefox 50**.
 
+## Development
+
+webpack, dev and prod build, the only difference is in linting errors TODO:
+
 ## License
 
-[MIT](../blob/master/LICENSE)
+[MIT](master/LICENSE)
