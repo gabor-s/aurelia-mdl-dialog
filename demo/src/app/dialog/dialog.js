@@ -31,6 +31,9 @@ export class Dialog {
             }
         })
             .then(text => {
+                if (text==='') { // dialog was cancelled
+                    return;
+                }
                 this.textFromInnerDialog = text;
                 // https://github.com/google/material-design-lite/issues/4089
                 this.inputForInnerDialogText.MaterialTextfield.change(this.textFromInnerDialog);

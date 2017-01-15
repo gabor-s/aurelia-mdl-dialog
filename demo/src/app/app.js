@@ -56,10 +56,13 @@ export class App {
             model: {
                 title: this.dialogTitle,
                 textFromInnerDialog: this.result.textFromInnerDialog,
-                selectedItems: this.result.selectedItems
+                selectedItems: this.result.selectedItems.slice()
             }
         })
             .then(dialogResult => {
+                if (dialogResult==='') { // dialog was cancelled
+                    return;
+                }
                 this.result = JSON.parse(dialogResult);
                 // https://github.com/google/material-design-lite/issues/4089
                 this.textFieldForInnerDialogText.MaterialTextfield.change(this.result.textFromInnerDialog);
