@@ -127,8 +127,19 @@ return a value.
 
 #### Canceling the dialog
 
-By specification the dialog can be [cancelled](https://html.spec.whatwg.org/multipage/forms.html#canceling-dialogs). TODO:
-no return value in this case, must be tested
+By specification browsers may provide a user interface to [cancel](https://html.spec.whatwg.org/multipage/forms.html#canceling-dialogs)
+the dialog. If the dialog is canceled the return value will be an empty string (actually the browser will not set a
+return value, so it remains the default empty string).
+
+```javascript
+this._mdlDialogService.show({viewModel: Dialog})
+    .then(returnValue => {
+        if (returnValue==='') { // dialog was canceled
+            return;
+        }
+        // dialog was not canceled, do something with the return value
+    });
+```
 
 ## API
 
