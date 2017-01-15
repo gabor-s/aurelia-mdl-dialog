@@ -1,10 +1,11 @@
 # aurelia-mdl-dialog
-Aurelia wrapper for [Material Design Lite's Dialog](https://getmdl.io/components/#dialog-section) component.
+Aurelia wrapper for Material Design Lite's [Dialog](https://getmdl.io/components/#dialog-section) component.
 
 ## <a name="live-demo"></a>Live demo
-The live demo is ...
+It demonstrates showing a dialog from another one, passing values to and returning values from a dialog, positioning
+a dialog.
 
-A live demo can be found [here]().
+The live demo is [here]().
 
 ## Install
 
@@ -12,19 +13,31 @@ A live demo can be found [here]().
 npm install aurelia-mdl-dialog --save
 ```
 
+### Dependencies
+
+The *Aurelia Framework* and [*Google's Dialog Polyfill*](https://github.com/GoogleChrome/dialog-polyfill) for browsers 
+without native ```<dialog>``` support.
+
 ## Usage
 
-This component makes available an ```MdlDialogService``` object which can be used to programmatically show a dialog. 
+This component exports the ```MdlDialogService``` object which can be used to programmatically show a dialog. 
 The ViewModel of the dialog must be passed to the ```show``` method of the ```MdlDialogService``` 
 object. After showing the dialog, it receives a ```DialogController``` object which can be used to close the dialog and 
-return a value.
+return a value. The ```show``` method returns a ```Promise``` ... TODO!!!
 
-### A simple dialog
+### Example
 
-In this example a simple dialog will be shown....
+In this example a dialog with a single text input field is shown. The initial value of the input field is passed to the
+dialog and the value entered into the input field is returned to the caller.
+
 For a more complex example please check the [live demo](#live-demo).
 
-#### ViewModel
+#### <a name="dialog-viewmodel"></a>Dialog ViewModel
+
+A plain Aurelia ViewModel class. The ```activate``` method handles the initial value of the input field. 
+The injected ```Promise``` is fulfilled when the dialog is shown. The fulfillment value of the ```Promise```
+is a ```DialogController``` object, which can be used to close 
+the dialog and return a value. The returned value must be a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element).
 
 ```javascript
 export class Dialog {
@@ -50,7 +63,7 @@ export class Dialog {
 }
 ```
 
-#### Markup
+#### Dialog template
 
 ```html
 <template>
@@ -70,7 +83,9 @@ export class Dialog {
 
 #### Showing the dialog
 
-The ```MdlDialogService``` object's ```show``` method is then used to actually show the dialog. Please see the API documentation for more information. TODO LINK!
+The ```MdlDialogService``` object's ```show``` method is used to actually show the dialog. The ```show``` method
+returns a ```Promise``` which will be fulfilled when the dialog is closed. The fulfillment value of this ```Promise``` 
+is the return value of the dialog.
 
 ```javascript
 import MdlDialogService from 'aurelia-mdl-dialog';
@@ -101,16 +116,66 @@ export class App {
 }
 ```
 
-#### Closing a dialog
+#### Closing the dialog
 
-...
+The dialog cannot be closed from the caller, only from the dialog itself. As shown [earlier](#dialog-viewmodel) 
+a ```DialogController``` object is available in the dialog and this object can be used to close the dialog and 
+return a value. 
 
-A dialog cannot be closed from the caller, only from the dialog itself.
 
+## API
 
-## MdlDialogService API
+### MdlDialogService
 
-Work in progess!
+The ```MdlDialogService``` is the TODO!!!
+
+#### ```show```
+
+Shows a dialog and returns a ```Promise``` which is fulfilled when the dialog is closed. The fulfillment value is the 
+return value of the dialog. 
+
+The parameter of the ```show``` method is a configuration object with the following keys:
+
+##### ```viewModel```
+
+The ViewModel class of the dialog. Must be a string or a function. Mandatory parameter.
+
+##### ```model```
+
+The model object of the dialog. Can be used to pass values to the dialog. The ```activate``` method of the dialog's 
+ViewModel class will be called with this object. Optional parameter.
+
+##### ```cssClass```
+
+The CSS class that will be assigned to the ```<dialog>``` HTML tag. TODO!!! 
+
+```javascript
+ this._mdlDialogService.show({
+            viewModel: Dialog,
+            model: {
+                text: this.textFromDialog
+            },
+            cssClass: 'myDialog'
+        })
+        .then(text => {
+            this.textFromDialog = text;
+        });
+```
+
+### DialogController
+
+The ```DialogController``` is obtained through a ```Promise``` which is injected automatically into the Dialog's 
+ViewModel class. The promise is fulfilled when the dialog is shown and the fulfillment value is the 
+```DialogController``` object.
+
+#### ```close```
+
+Closes the dialog and optionally returns a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element) 
+value as the return value of the dialog.
+
+```javascript
+dialogController.close('returnValue');
+```
 
 ## Releasing
 
@@ -142,3 +207,15 @@ git push origin master v$$version$$
 ```bash
 npm publish --tag beta
 ```
+
+## Testing
+
+TODO!!!
+
+### Browsers
+
+Tested only on **Chrome 55** and **Firefox 50**.
+
+## License
+
+[MIT](../blob/master/LICENSE)
