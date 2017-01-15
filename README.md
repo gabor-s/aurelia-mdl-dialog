@@ -110,6 +110,9 @@ export class App {
                     }
                 })
                 .then(text => {
+                    if (text==='') { // dialog was cancelled
+                        return;
+                    }
                     this.textFromDialog = text;
                 });
     }
@@ -124,7 +127,8 @@ return a value.
 
 #### Canceling the dialog
 
-TODO!!!
+By specification the dialog can be [cancelled](https://html.spec.whatwg.org/multipage/forms.html#canceling-dialogs). TODO:
+no return value in this case, must be tested
 
 ## API
 
