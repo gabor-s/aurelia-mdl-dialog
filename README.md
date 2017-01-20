@@ -125,7 +125,7 @@ The dialog cannot be closed from the caller, only from the dialog itself. As sho
 a [`DialogController`](#dialog-controller) object is available in the dialog and this object can be used to close the 
 dialog and return a value. 
 
-#### Canceling the dialog
+#### <a name="canceling-the-dialog"></a>Canceling the dialog
 
 By specification browsers may provide a user interface to [cancel](https://html.spec.whatwg.org/multipage/forms.html#canceling-dialogs)
 the dialog. If the dialog is canceled the return value will be an empty string (actually the browser will not set a
@@ -196,7 +196,7 @@ ViewModel class. The `Promise` is fulfilled when the dialog is shown and the ful
 
 Closes the dialog and optionally returns a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element) 
 value as the return value of the dialog. **Returning an empty string is ambigous, because empty string is also the 
-representation of dialog cancelation.** 
+representation of dialog [cancelation](#canceling-the-dialog).** 
 
 ```javascript
 dialogController.close('returnValue');
