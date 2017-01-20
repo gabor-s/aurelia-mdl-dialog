@@ -22,8 +22,8 @@ without native `<dialog>` support.
 
 This component exports the `MdlDialogService` object which can be used to programmatically show a dialog. 
 The ViewModel of the dialog must be passed to the `show` method of the `MdlDialogService` 
-object. After showing the dialog, it receives a `DialogController` object which can be used to close the dialog and 
-return a value. The `show` method returns a `Promise` ... TODO!!!
+object. After showing the dialog, it receives a [`DialogController`](#dialog-controller) object which can be used to
+close the dialog and return a value. The `show` method returns a `Promise` ... TODO!!!
 
 ### Example
 
@@ -36,7 +36,7 @@ For a more complex example please check the [live demo](#live-demo).
 
 A plain Aurelia ViewModel class. The `activate` method handles the initial value of the input field. 
 The injected `Promise` is fulfilled when the dialog is shown. The fulfillment value of the `Promise`
-is a `DialogController` object, which can be used to close the dialog and return a value. 
+is a [`DialogController`](#dialog-controller) object, which can be used to close the dialog and return a value. 
 The returned value must be a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element).
 
 ```javascript
@@ -122,8 +122,8 @@ export class App {
 #### Closing the dialog
 
 The dialog cannot be closed from the caller, only from the dialog itself. As shown [earlier](#dialog-viewmodel) 
-a `DialogController` object is available in the dialog and this object can be used to close the dialog and 
-return a value. 
+a [`DialogController`](#dialog-controller) object is available in the dialog and this object can be used to close the 
+dialog and return a value. 
 
 #### Canceling the dialog
 
@@ -186,7 +186,7 @@ The CSS class that will be assigned to the `<dialog>` HTML tag. Optional paramet
         });
 ```
 
-### DialogController
+### <a name="dialog-controller"></a>DialogController
 
 The `DialogController` is obtained through a `Promise` which is injected automatically into the Dialog's 
 ViewModel class. The `Promise` is fulfilled when the dialog is shown and the fulfillment value is the 
@@ -196,6 +196,8 @@ ViewModel class. The `Promise` is fulfilled when the dialog is shown and the ful
 
 Closes the dialog and optionally returns a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element) 
 value as the return value of the dialog.
+
+Returning an empty string is ambigous, because empty string is also the representation of dialog cancelation. 
 
 ```javascript
 dialogController.close('returnValue');
