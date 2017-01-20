@@ -9,6 +9,7 @@
         "mdl",
         "dialog"
     ],
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/suhaig/aurelia-mdl-dialog.git"
