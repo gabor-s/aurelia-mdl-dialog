@@ -195,9 +195,8 @@ ViewModel class. The `Promise` is fulfilled when the dialog is shown and the ful
 #### `close`
 
 Closes the dialog and optionally returns a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element) 
-value as the return value of the dialog.
-
-Returning an empty string is ambigous, because empty string is also the representation of dialog cancelation. 
+value as the return value of the dialog. **Returning an empty string is ambigous, because empty string is also the 
+representation of dialog cancelation.** 
 
 ```javascript
 dialogController.close('returnValue');
