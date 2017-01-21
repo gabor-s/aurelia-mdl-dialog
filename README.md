@@ -1,6 +1,14 @@
 # aurelia-mdl-dialog
 Aurelia wrapper for Material Design Lite's [Dialog](https://getmdl.io/components/#dialog-section) component.
 
+It can be used to:
+
+* show a modal or non-modal dialog (the dialog is notified via `Promise`, when the dialog is shown)
+* pass values to the dialog
+* return a string value from the dialog TODO: link
+* close the dialog (the caller is notified via `Promise`, when the dialog is closed)
+
+
 ## <a name="live-demo"></a>Live demo
 It demonstrates showing a dialog from another one, passing values to and returning values from a dialog, positioning
 a dialog.
