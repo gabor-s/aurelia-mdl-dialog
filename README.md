@@ -18,12 +18,14 @@ npm install aurelia-mdl-dialog --save
 The *Aurelia Framework* and [*Google's Dialog Polyfill*](https://github.com/GoogleChrome/dialog-polyfill) for browsers 
 without native `<dialog>` support.
 
-## Usage TODO
+## Usage
 
-This component exports the `MdlDialogService` object which can be used to programmatically show a dialog. 
-The ViewModel of the dialog must be passed to the `show` method of the `MdlDialogService` 
-object. After showing the dialog, it receives a [`DialogController`](#dialog-controller) object which can be used to
-close the dialog and return a value. The `show` method returns a `Promise` ... TODO!!!
+This component exports the [`MdlDialogService`](#mdl-dialog-service) object which can be used to programmatically show 
+a modal or non-modal dialog. The ViewModel of the dialog must be passed to the `show` method of the 
+[`MdlDialogService`](#mdl-dialog-service) object. When the dialog is shown it receives a 
+[`DialogController`](#dialog-controller) object which can be used to close the dialog and return a value. 
+The `show` method returns a `Promise` which is fulfilled when the dialog is closed, the fulfillment value is the return
+value of the dialog or an empty string if the dialog was canceled.
 
 ### Example
 
@@ -37,7 +39,6 @@ For a more complex example please check the [live demo](#live-demo).
 A plain Aurelia ViewModel class. The `activate` method handles the initial value of the input field. 
 The injected `Promise` is fulfilled when the dialog is shown. The fulfillment value of the `Promise`
 is a [`DialogController`](#dialog-controller) object, which can be used to close the dialog and return a value. 
-The returned value must be a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element).
 
 ```javascript
 export class Dialog {
@@ -83,8 +84,8 @@ export class Dialog {
 
 #### Showing the dialog
 
-The `MdlDialogService` object's `show` method is used to actually show the dialog. The `show` method
-returns a `Promise` which will be fulfilled when the dialog is closed. The fulfillment value of this `Promise`
+The [`MdlDialogService`](#mdl-dialog-service) object's `show` method is used to actually show the dialog. The `show` 
+method returns a `Promise` which will be fulfilled when the dialog is closed. The fulfillment value of this `Promise`
 is the return value of the dialog or an empty string if the dialog was canceled.
 
 ```javascript
@@ -143,9 +144,9 @@ this._mdlDialogService.show({viewModel: Dialog})
 
 ## API
 
-### MdlDialogService
+### <a name="mdl-dialog-service"></a>MdlDialogService
 
-The MdlDialogService` is the TODO!!!
+The `MdlDialogService` is the TODO!!!
 
 #### `show`
 
@@ -188,9 +189,8 @@ The CSS class that will be assigned to the `<dialog>` HTML tag. Optional paramet
 
 ### <a name="dialog-controller"></a>DialogController
 
-The `DialogController` is obtained through a `Promise` which is injected automatically into the Dialog's 
-ViewModel class. The `Promise` is fulfilled when the dialog is shown and the fulfillment value is the 
-`DialogController` object.
+The `DialogController` is obtained through a `Promise` which is injected automatically into the Dialog's ViewModel 
+class. The `Promise` is fulfilled when the dialog is shown and the fulfillment value is the `DialogController` object.
 
 #### `close`
 
@@ -240,10 +240,6 @@ Unfortunately there are no automated tests. It's a shame, try to fix in the near
 ### Browsers
 
 Manually tested on **Chrome 55** (native `<dialog>` support) and **Firefox 50** (`<dialog>` support with polyfill).
-
-## Development
-
-webpack2, dev and prod build, the only difference is in linting errors TODO:
 
 ## License
 
