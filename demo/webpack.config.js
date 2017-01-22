@@ -83,5 +83,4 @@ switch (process.env.NODE_ENV) {
         finalConfig = webpackMerge(commonConfig, devConfig);
 }
 
-//console.log('finalConfig is '+JSON.stringify(finalConfig));
 module.exports = finalConfig;
