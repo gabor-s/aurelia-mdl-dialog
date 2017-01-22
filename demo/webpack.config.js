@@ -6,8 +6,6 @@ const webpackMerge = require('webpack-merge');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let finalConfig = {};
-
 const commonConfig = {
     devtool: 'cheap-eval-source-map',
     entry: {
@@ -68,19 +66,21 @@ const prodConfig = {
     }
 };
 
-switch (process.env.NODE_ENV) {
-    case 'prod':
-    case 'production':
-        finalConfig = webpackMerge(commonConfig, prodConfig);
-        break;
-    case 'test':
-    case 'testing':
-        break;
-    case 'dev':
-    case 'development':
-    default:
-        commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
-        finalConfig = webpackMerge(commonConfig, devConfig);
+module.exports = function (environment) {
+    commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
+    let finalConfig = {};
+    switch (environment) {
+        case 'prod':
+        case 'production':
+            finalConfig = webpackMerge(commonConfig, prodConfig);
+            break;
+        case 'test':
+        case 'testing':
+            break;
+        case 'dev':
+        case 'development':
+        default:
+            finalConfig = webpackMerge(commonConfig, devConfig);
+    }
+    return finalConfig;
 }
-
-module.exports = finalConfig;
