@@ -3,10 +3,10 @@ Aurelia wrapper for Material Design Lite's [Dialog](https://getmdl.io/components
 
 It can be used to:
 
-* show a modal or non-modal dialog (the dialog is notified via `Promise`, when the dialog is shown)
+* show a modal or non-modal dialog (the dialog is notified via `Promise` when it is shown)
 * pass values to the dialog
-* return a string value from the dialog TODO: link
-* close the dialog (the caller is notified via `Promise`, when the dialog is closed)
+* return a [string](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element) value from the dialog
+* close the dialog (the caller is notified via `Promise` when the dialog is closed)
 
 
 ## <a name="live-demo"></a>Live demo
@@ -140,21 +140,12 @@ By specification browsers may provide a user interface to [cancel](https://html.
 the dialog. If the dialog is canceled the return value will be an empty string (actually the browser will not set a
 return value, so it remains the default empty string).
 
-```javascript
-this._mdlDialogService.show({viewModel: Dialog})
-    .then(returnValue => {
-        if (returnValue==='') { // dialog was canceled
-            return;
-        }
-        // dialog was not canceled, do something with the return value
-    });
-```
-
 ## API
 
 ### <a name="mdl-dialog-service"></a>MdlDialogService
 
-The `MdlDialogService` is the TODO!!!
+The `MdlDialogService` is responsible for showing the dialog, providing the `DialogController` and handling the return
+value. The `MdlDialogService` is exported by this component.
 
 #### `show`
 
@@ -197,8 +188,9 @@ The CSS class that will be assigned to the `<dialog>` HTML tag. Optional paramet
 
 ### <a name="dialog-controller"></a>DialogController
 
-The `DialogController` is obtained through a `Promise` which is injected automatically into the Dialog's ViewModel 
-class. The `Promise` is fulfilled when the dialog is shown and the fulfillment value is the `DialogController` object.
+The `DialogController` is responsible for closing the dialog and returning a value. It is obtained through a `Promise` 
+which is injected automatically into the Dialog's ViewModel class. The `Promise` is fulfilled when the dialog is shown 
+and the fulfillment value is the `DialogController` object.
 
 #### `close`
 
