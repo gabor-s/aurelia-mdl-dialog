@@ -46,9 +46,15 @@ const commonConfig = {
             },
             {
                 test: /\.html$/,
-                exclude: /src\/index.html/, // node-modules???
+                exclude: [/node_modules/, /src\/index.html/],
                 loader: 'html-loader'
-            }]
+            },
+            // workaround for AureliaWebpackPlugin, because it's complaining about nobody takes care of index.html
+            {
+                test: /src\/index\.html$/,
+                loader: 'raw-loader'
+            }
+        ]
     }
 };
 
