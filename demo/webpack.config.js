@@ -2,6 +2,7 @@
 
 const project = require('./package.json');
 const path = require('path');
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -62,8 +63,13 @@ const devConfig = {
 const prodConfig = {
     devtool: "source-map",
     output: {
-        filename: 'bundle.js'
-    }
+        filename: '[chunkhash].[name].js'
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['manifest']
+        })
+    ]
 };
 
 module.exports = function (environment) {
