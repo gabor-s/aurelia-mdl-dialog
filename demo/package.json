@@ -33,6 +33,7 @@
         "raw-loader": "^0.5.1",
         "rimraf": "^2.5.4",
         "webpack": "^2.2.0-rc.1",
+        "webpack-chunk-hash": "^0.3.0",
         "webpack-dev-server": "^2.2.0-rc.0",
         "webpack-merge": "^1.1.1"
     },

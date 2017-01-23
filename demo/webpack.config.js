@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackChunkHash = require('webpack-chunk-hash');
 
 const commonConfig = {
     devtool: 'cheap-eval-source-map',
@@ -67,17 +68,20 @@ const prodConfig = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['manifest']
-        })
+            names: ['vendor', 'manifest'],
+            minChunks: Infinity
+        }),
+        new WebpackChunkHash()
     ]
 };
 
 module.exports = function (environment) {
-    commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies).filter(dep => dep.startsWith('aurelia-'))];
+
     let finalConfig = {};
     switch (environment) {
         case 'prod':
         case 'production':
+            commonConfig.entry.vendor = [...commonConfig.entry.app, ...Object.keys(project.dependencies)];
             finalConfig = webpackMerge(commonConfig, prodConfig);
             break;
         case 'test':
@@ -86,6 +90,7 @@ module.exports = function (environment) {
         case 'dev':
         case 'development':
         default:
+            commonConfig.entry.app = [...commonConfig.entry.app, ...Object.keys(project.dependencies)];
             finalConfig = webpackMerge(commonConfig, devConfig);
     }
     return finalConfig;
