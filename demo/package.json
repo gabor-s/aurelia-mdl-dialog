@@ -15,7 +15,7 @@
         "aurelia-history-browser": "^1.0.0",
         "aurelia-logging-console": "^1.0.0",
         "aurelia-mdl": "^0.4.3",
-        "aurelia-mdl-dialog": "file:///home/suhaig/Development/projects/aurelia-mdl-dialog",
+        "aurelia-mdl-dialog": "^1.0.0",
         "aurelia-polyfills": "^1.1.1",
         "aurelia-templating-binding": "^1.1.0",
         "aurelia-templating-resources": "^1.2.0",
