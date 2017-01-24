@@ -1,15 +1,9 @@
 ## [Unreleased]
-### Added
-- a
-- b
-- c
 
-### Changed
-- a
+## [1.0.1] - 2017-01-24
+### Fixed
+- Write a meaningful change log.
 
-## [1.0.0]
-### Added
-- a
+## [1.0.0] - 2017-01-24
 
-### Changed
-- b
+First public release.
