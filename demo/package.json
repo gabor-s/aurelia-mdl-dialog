@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdl-dialog-demo",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Demo for aurelia-mdl-dialog",
     "scripts": {
         "clean": "rimraf -- dist",
