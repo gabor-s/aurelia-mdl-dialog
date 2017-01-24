@@ -1,0 +1,24 @@
+<template>
+    <require from="./dialog.css"></require>
+
+    <h4 class="mdl-dialog__title">${title}</h4>
+    <div class="mdl-dialog__content">
+        <p>Select some items. The selected items will be part of the dialog's return value.
+        The return value must be a
+            <a href="https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element">string</a>, so in this demo we stringify the return value.</p>
+        <label mdl="checkbox" for="item-${$index}" repeat.for="item of availableItems"
+               class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+            <input type="checkbox" id="item-${$index}" value.bind="item" checked.bind="selectedItems"
+                   class="mdl-checkbox__input" autofocus>
+            <span class="mdl-checkbox__label">${item}</span>
+        </label>
+        <div mdl="textfield" class="mdl-textfield mdl-js-textfield" ref="inputForInnerDialogText">
+            <input class="mdl-textfield__input" type="text" id="textFromInnerDialog" value.bind="textFromInnerDialog" disabled>
+            <label class="mdl-textfield__label" for="textFromInnerDialog">Text from inner dialog</label>
+        </div>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+        <button type="button" class="mdl-button mdl-button--colored" click.delegate="showInnerDialog()">Show inner dialog</button>
+        <button type="button" class="mdl-button" click.delegate="close()">Close</button>
+    </div>
+</template>

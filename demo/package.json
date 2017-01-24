@@ -1,0 +1,47 @@
+{
+    "name": "aurelia-mdl-dialog-demo",
+    "version": "0.1.0",
+    "description": "Demo for aurelia-mdl-dialog",
+    "scripts": {
+        "clean": "rimraf -- dist",
+        "build": "webpack --colors --progress",
+        "build:prod": "npm run clean && npm run build -- --env prod",
+        "start": "webpack-dev-server"
+    },
+    "dependencies": {
+        "aurelia-bootstrapper-webpack": "^1.1.0",
+        "aurelia-event-aggregator": "^1.0.1",
+        "aurelia-framework": "^1.0.8",
+        "aurelia-history-browser": "^1.0.0",
+        "aurelia-logging-console": "^1.0.0",
+        "aurelia-mdl": "^0.4.3",
+        "aurelia-mdl-dialog": "^1.0.0",
+        "aurelia-polyfills": "^1.1.1",
+        "aurelia-templating-binding": "^1.1.0",
+        "aurelia-templating-resources": "^1.2.0",
+        "aurelia-templating-router": "^1.0.1",
+        "prismjs": "^1.6.0"
+    },
+    "devDependencies": {
+        "aurelia-webpack-plugin": "^1.2.0",
+        "babel-core": "^6.21.0",
+        "babel-loader": "^6.2.10",
+        "babel-preset-es2015": "^6.18.0",
+        "css-loader": "^0.26.1",
+        "html-loader": "^0.4.4",
+        "html-webpack-plugin": "^2.24.1",
+        "raw-loader": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "webpack": "^2.2.0-rc.1",
+        "webpack-chunk-hash": "^0.3.0",
+        "webpack-dev-server": "^2.2.0-rc.0",
+        "webpack-merge": "^1.1.1"
+    },
+    "aurelia": {
+        "build": {
+            "resources": [
+                "aurelia-mdl/mdl.js"
+            ]
+        }
+    }
+}

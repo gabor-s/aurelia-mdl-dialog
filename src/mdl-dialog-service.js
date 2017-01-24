@@ -13,7 +13,7 @@ export default class MdlDialogService {
         this._compositionEngine = compositionEngine;
     }
 
-    open(configuration) {
+    show(configuration) {
         if (typeof configuration.viewModel !== 'function' && typeof configuration.viewModel !== 'string') {
             throw new Error('viewModel is a mandatory configuration property and it has to be a function or a string');
         }
@@ -88,8 +88,8 @@ class MdlDialogViewModel {
     getViewStrategy() {
         return new InlineViewStrategy(`
             <template>
-                <require from="jspm_packages/github/GoogleChrome/dialog-polyfill@0.4.4/dialog-polyfill.css"></require>
-            
+                <require from="dialog-polyfill/dialog-polyfill.css"></require>
+
                 <dialog mdl="dialog" ref="dialog" class.one-time="configuration.cssClass">
                     <compose view-model.bind="configuration.viewModel" model.bind="configuration.model" containerless></compose>
                 </dialog>
