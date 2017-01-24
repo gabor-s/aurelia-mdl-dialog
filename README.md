@@ -13,7 +13,7 @@ It can be used to:
 It demonstrates showing a dialog from another one, passing values to and returning values from a dialog, positioning
 a dialog.
 
-The live demo is [here]().
+The live demo is [here](https://suhaig.github.io/aurelia-mdl-dialog/).
 
 ## Install
 
