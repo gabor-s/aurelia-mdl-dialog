@@ -202,37 +202,6 @@ representation of dialog [cancelation](#canceling-the-dialog).**
 dialogController.close('returnValue');
 ```
 
-## Releasing
-
-1. update version in *package.json* file
-
-2. build the project
-```bash
-npm run build
-```
-
-3. commit the changes
-```bash
-git commit -m "Release $$version$$"
-```
-
-4. tag the commit
-```bash
-git tag -a v$$version$$ -m "Release $$version$$"
-```
-
-5. push the commit and the tag
-```bash
-git push origin master v$$version$$
-```
-
-6. 
-
-7. publish package to NPM
-```bash
-npm publish --tag beta
-```
-
 ## Testing
 
 Unfortunately there are no automated tests. It's a shame, try to fix in the near future.
@@ -243,4 +212,4 @@ Manually tested on **Chrome 55** (native `<dialog>` support) and **Firefox 50** 
 
 ## License
 
-[MIT](master/LICENSE)
+[MIT](/blob/master/LICENSE)
