@@ -212,4 +212,4 @@ Manually tested on **Chrome 55** (native `<dialog>` support) and **Firefox 50** 
 
 ## License
 
-[MIT](/blob/master/LICENSE)
+[MIT](LICENSE)
