@@ -1,5 +1,13 @@
 /* eslint-env node */
 
+/* The AureliaWebpackPlugin processes everything under the src directory. AFAIK currently there's no way to tell the
+   plugin to exclude something. So src/index.html get processed too. If there's no loader for src/index.html then the
+   AureliaWebpackPlugin will emit a warning and the file will not be part of the app bundle. If I specify for example
+   the raw-loader to handle src/index.html then the AureliaWebpackPlugin will not emit a warning, but the src/index.html
+   file will be part of the app bundle. To solve this I moved the index.html file out from the src direcrtory, so there's
+   no warning and the index.html file will not be part of the app bundle.
+ */
+
 const project = require('./package.json');
 const path = require('path');
 const webpack = require('webpack');
@@ -19,7 +27,7 @@ const commonConfig = {
     plugins: [
         new AureliaWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './index.html',
             chunksSortMode: 'dependency'
         })
     ],
@@ -46,13 +54,8 @@ const commonConfig = {
             },
             {
                 test: /\.html$/,
-                exclude: [/node_modules/, /src\/index.html/],
+                exclude: [/node_modules/, /index.html/],
                 loader: 'html-loader'
-            },
-            // workaround for AureliaWebpackPlugin, because it's complaining about nobody takes care of index.html
-            {
-                test: /src\/index\.html$/,
-                loader: 'raw-loader'
             }
         ]
     }
