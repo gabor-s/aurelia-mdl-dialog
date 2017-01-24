@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdl-dialog",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Aurelia wrapper for Material Design Lite's Dialog component",
     "main": "dist/mdl-dialog-service.js",
     "keywords": [
