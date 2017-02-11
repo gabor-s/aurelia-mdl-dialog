@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## 1.0.3 (2017-02-11)
+### Fixed
+- Fix the broken release.
+
 ## 1.0.2 (2017-01-24)
 ### Fixed
 - Fix LICENSE link in README.md.
